@@ -99,10 +99,6 @@ class Login extends StatelessWidget {
             const Spacer(),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                );
               },
               child: const Text("SIGN IN",
                   style: TextStyle(

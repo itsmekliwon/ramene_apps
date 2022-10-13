@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:ramene_apps/login.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget{
+
+Function setTheme;
+  HomePage({Key? key, required this.setTheme}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  bool isDarkmode = false;
   @override
   Widget build(BuildContext context) {
     List<String> kumpulanGambar = [
@@ -29,9 +33,12 @@ class _HomePageState extends State<HomePage> {
         ),
         actions: <Widget>[
           IconButton(
-            icon: const Icon(Icons.notifications,
+            icon: const Icon(Icons.dark_mode,
                 color: const Color.fromARGB(255, 0, 0, 0)),
-            onPressed: () {},
+            onPressed: () {
+              isDarkmode = !isDarkmode;
+              widget.setTheme(isDarkmode);
+            },
           ),
         ],
       ),
